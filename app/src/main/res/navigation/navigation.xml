@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragmentMain">
+
+    <fragment
+        android:id="@+id/fragmentMain"
+        android:name="com.three.game.ui.home.FragmentHome"
+        android:label="FragmentMain" >
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentChooseGame"
+            app:destination="@id/fragmentChooseGame" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentChooseGame"
+        android:name="com.three.game.ui.choose.FragmentChooseGame"
+        android:label="FragmentChooseGame" >
+        <action
+            android:id="@+id/action_fragmentChooseGame_to_fragmentFirstGame"
+            app:destination="@id/fragmentFirstGame" />
+        <action
+            android:id="@+id/action_fragmentChooseGame_to_fragmentSecondGame"
+            app:destination="@id/fragmentSecondGame" />
+        <action
+            android:id="@+id/action_fragmentChooseGame_to_fragmentThirdGame"
+            app:destination="@id/fragmentThirdGame" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentFirstGame"
+        android:name="com.three.game.ui.games.first.FragmentFirstGame"
+        android:label="FragmentFirstGame" >
+        <action
+            android:id="@+id/action_fragmentFirstGame_to_fragmentFinalResult"
+            app:destination="@id/fragmentFinalResult" />
+        <action
+            android:id="@+id/action_fragmentFirstGame_to_dialogPause"
+            app:destination="@id/dialogPause" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentSecondGame"
+        android:name="com.three.game.ui.games.second.FragmentSecondGame"
+        android:label="FragmentSecondGame" >
+        <action
+            android:id="@+id/action_fragmentSecondGame_to_fragmentFinalResult"
+            app:destination="@id/fragmentFinalResult" />
+        <action
+            android:id="@+id/action_fragmentSecondGame_to_dialogPause"
+            app:destination="@id/dialogPause" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentThirdGame"
+        android:name="com.three.game.ui.games.third.FragmentThirdGame"
+        android:label="FragmentThirdGame" >
+        <action
+            android:id="@+id/action_fragmentThirdGame_to_fragmentFinalResult"
+            app:destination="@id/fragmentFinalResult" />
+        <action
+            android:id="@+id/action_fragmentThirdGame_to_dialogPause"
+            app:destination="@id/dialogPause" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentFinalResult"
+        android:name="com.three.game.ui.final_result.FragmentFinalResult"
+        android:label="FragmentFinalResult" >
+        <argument
+            android:name="game"
+            app:argType="integer" />
+        <argument
+            android:name="score"
+            app:argType="integer" />
+    </fragment>
+    <dialog
+        android:id="@+id/dialogPause"
+        android:name="com.three.game.ui.other.DialogPause"
+        android:label="DialogPause" />
+</navigation>
